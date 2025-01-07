@@ -6,259 +6,106 @@
     <title>Food Delivery Portal</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f8fa;
-            color: #333;
-            position: relative;
-            overflow-x: hidden;
+            background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836'); /* Food-related background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
         }
 
         header {
-            background-color: #4CAF50;
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1s ease-out;
-        }
-
-        header h1 {
-            font-size: 36px;
-            font-weight: 700;
+            font-size: 2.5em;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background-color: #333;
-            padding: 12px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
         }
 
         nav a {
             color: white;
-            text-decoration: none;
-            padding: 10px 20px;
+            text-decoration: none; /* Removes the underline */
             margin: 0 15px;
-            font-size: 16px;
+            padding: 10px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
-            background-color: #575757;
+            background-color: #4CAF50;
+            transform: scale(1.1);
         }
 
         section {
-            padding: 40px 20px;
-            position: relative;
-            z-index: 2;
+            padding: 60px;
+        }
+
+        a {
+            text-decoration: none; /* Removes the underline from links in the sections as well */
         }
 
         .container {
             max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            animation: slideUp 0.8s ease-out;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.5s;
+            cursor: pointer;
         }
 
         .container:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .container:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 150, 0, 0.1);
+            animation: glow 1.5s infinite;
         }
 
         h2 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .icon {
+            font-size: 60px;
+            margin: 20px 0;
             color: #4CAF50;
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: 600;
         }
 
-        p, ul {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
-            font-size: 14px;
-            z-index: 2;
-            position: relative;
-        }
-
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Floating Food Items */
-        .floating-food {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 0;
-            animation: float 10s ease-in-out infinite;
-        }
-
-        /* Add multiple food items */
-        .floating-food:nth-child(1) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); /* Pizza */
-            top: 10%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-
-        .floating-food:nth-child(2) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3075/3075977.png'); /* Burger */
-            top: 20%;
-            left: 70%;
-            animation-delay: 2s;
-        }
-
-        .floating-food:nth-child(3) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/135/135660.png'); /* Drink */
-            top: 50%;
-            left: 30%;
-            animation-delay: 4s;
-        }
-
-        .floating-food:nth-child(4) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1468/1468784.png'); /* Fries */
-            top: 40%;
-            left: 80%;
-            animation-delay: 6s;
-        }
-
-        .floating-food:nth-child(5) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2830/2830305.png'); /* Taco */
-            top: 70%;
-            left: 10%;
-            animation-delay: 3s;
-        }
-
-        .floating-food:nth-child(6) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/888/888954.png'); /* Donut */
-            top: 15%;
-            left: 50%;
-            animation-delay: 5s;
-        }
-
-        .floating-food:nth-child(7) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3480/3480430.png'); /* Cupcake */
-            top: 80%;
-            left: 60%;
-            animation-delay: 7s;
-        }
-
-        .floating-food:nth-child(8) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2734/2734185.png'); /* Pizza Box */
-            top: 5%;
-            left: 5%;
-            animation-delay: 1s;
-        }
-
-        .floating-food:nth-child(9) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2830/2830303.png'); /* Ice Cream */
-            top: 10%;
-            left: 20%;
-            animation-delay: 2s;
-        }
-
-        .floating-food:nth-child(10) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1243/1243067.png'); /* Coffee Cup */
-            top: 30%;
-            left: 60%;
-            animation-delay: 3s;
-        }
-
-        .floating-food:nth-child(11) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046789.png'); /* Hotdog */
-            top: 50%;
-            left: 10%;
-            animation-delay: 4s;
-        }
-
-        .floating-food:nth-child(12) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046786.png'); /* Steak */
-            top: 20%;
-            left: 70%;
-            animation-delay: 5s;
-        }
-
-        .floating-food:nth-child(13) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2830/2830343.png'); /* Sushi Rolls */
-            top: 60%;
-            left: 40%;
-            animation-delay: 6s;
-        }
-
-        .floating-food:nth-child(14) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1837/1837047.png'); /* Fried Chicken */
-            top: 80%;
-            left: 10%;
-            animation-delay: 7s;
-        }
-
-        .floating-food:nth-child(15) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2830/2830312.png'); /* Chinese Food Box */
-            top: 35%;
-            left: 50%;
-            animation-delay: 8s;
-        }
-
-        @keyframes float {
+        @keyframes glow {
             0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.8;
+                opacity: 0.2;
             }
             50% {
-                transform: translateY(-20px) translateX(20px);
-                opacity: 1;
+                opacity: 0.6;
             }
             100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
+                opacity: 0.2;
             }
         }
     </style>
@@ -268,6 +115,7 @@
         <h1>Food Delivery Management Portal</h1>
     </header>
 
+    <!-- Navigation Links -->
     <nav>
         <a href="#register">Register</a>
         <a href="#food-list">Food List</a>
@@ -275,41 +123,41 @@
         <a href="#feedback">Feedback</a>
     </nav>
 
-    <!-- Floating Food Items in Background -->
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-    <div class="floating-food"></div>
-
+    <!-- Sections with Links -->
     <section id="register">
-        <a href=" "><div class="container">
-            <h2>Register Hotel/User</h2>
-            <p>Here you can register hotels and users to start the food delivery process.</p>
-        </div></a>
+        <a href="register.html">
+            <div class="container">
+                <div class="icon">🍔</div>
+                <h2>Register Hotel/User</h2>
+            </div>
+        </a>
     </section>
 
+    <section id="food-list">
+        <a href="#food-list">
+            <div class="container">
+                <div class="icon">🍕</div>
+                <h2>Food Varieties</h2>
+            </div>
+        </a>
+    </section>
 
+    <section id="delivery">
+        <a href="#delivery">
+            <div class="container">
+                <div class="icon">🚴‍♂️</div>
+                <h2>Efficient Delivery Management</h2>
+            </div>
+        </a>
+    </section>
 
     <section id="feedback">
-        <a href=""><div class="container">
-            <h2>Feedback</h2>
-            <p>Users and hotels can leave feedback on the service.</p>
-        </div></a>
+        <a href="#feedback">
+            <div class="container">
+                <div class="icon">⭐</div>
+                <h2>Feedback</h2>
+            </div>
+        </a>
     </section>
-
-    <footer>
-        <p>&copy; 2025 Food Delivery Portal. All rights reserved.</p>
-    </footer>
 </body>
 </html>
