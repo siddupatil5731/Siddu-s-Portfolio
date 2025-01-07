@@ -24,11 +24,6 @@
             animation: slideIn 1s ease-out;
         }
 
-        header h1 {
-            font-size: 36px;
-            font-weight: 700;
-        }
-
         nav {
             display: flex;
             justify-content: center;
@@ -64,30 +59,7 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
             animation: slideUp 0.8s ease-out;
-        }
-
-        .container:hover {
-            transform: translateY(-5px);
-        }
-
-        h2 {
-            color: #4CAF50;
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        p, ul {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        ul {
-            padding-left: 20px;
         }
 
         footer {
@@ -99,15 +71,6 @@
             font-size: 14px;
             z-index: 2;
             position: relative;
-        }
-
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
         }
 
         /* Floating Food Items */
@@ -171,6 +134,20 @@
             animation-delay: 7s;
         }
 
+        .floating-food:nth-child(8) {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2917/2917242.png'); /* Ice Cream */
+            top: 25%;
+            left: 40%;
+            animation-delay: 8s;
+        }
+
+        .floating-food:nth-child(9) {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3664/3664699.png'); /* Hot Dog */
+            top: 65%;
+            left: 75%;
+            animation-delay: 10s;
+        }
+
         @keyframes float {
             0% {
                 transform: translateY(0) translateX(0);
@@ -183,26 +160,6 @@
             100% {
                 transform: translateY(0) translateX(0);
                 opacity: 0.8;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
             }
         }
     </style>
@@ -227,6 +184,8 @@
     <div class="floating-food"></div>
     <div class="floating-food"></div>
     <div class="floating-food"></div>
+    <div class="floating-food"></div>
+    <div class="floating-food"></div>
 
     <section id="register">
         <div class="container">
@@ -235,34 +194,10 @@
         </div>
     </section>
 
-    <section id="food-list">
-        <div class="container">
-            <h2>Food Varieties</h2>
-            <ul>
-                <li>Veg Options</li>
-                <li>Non-Veg Options</li>
-                <li>Custom Meals</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="delivery">
-        <div class="container">
-            <h2>Efficient Delivery Management</h2>
-            <p>We ensure timely and efficient deliveries with real-time tracking.</p>
-        </div>
-    </section>
-
-    <section id="feedback">
-        <div class="container">
-            <h2>Feedback</h2>
-            <p>We value your feedback to improve our services. Please leave your comments.</p>
-        </div>
-    </section>
-
     <footer>
         <p>&copy; 2025 Food Delivery Portal | <a href="#">Privacy Policy</a></p>
     </footer>
 </body>
 </html>
+
 
