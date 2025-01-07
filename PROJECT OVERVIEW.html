@@ -47,6 +47,28 @@
             transform: scale(1.1);
         }
 
+        /* Added styles for the new buttons */
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-buttons a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
         section {
             padding: 60px;
         }
@@ -115,12 +137,18 @@
         <h1>Food Delivery Management Portal</h1>
     </header>
 
-    <!-- Navigation Links -->
+    <!-- Navigation Links with "View Code" and "Description" buttons -->
     <nav>
         <a href="#register">Register</a>
         <a href="#food-list">Food List</a>
         <a href="#delivery">Delivery Management</a>
         <a href="#feedback">Feedback</a>
+
+        <!-- View Code and Description buttons -->
+        <div class="nav-buttons">
+            <a href="view-code.html">View Code</a>
+            <a href="description.html">Description</a>
+        </div>
     </nav>
 
     <!-- Sections with Links -->
