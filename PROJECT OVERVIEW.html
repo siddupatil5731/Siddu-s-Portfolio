@@ -11,7 +11,7 @@
             padding: 0;
             background-color: #f7f8fa;
             color: #333;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 1s ease-in-out, backgroundMove 10s infinite alternate;
         }
 
         header {
@@ -148,6 +148,18 @@
             }
             100% {
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes backgroundMove {
+            0% {
+                background: linear-gradient(45deg, #ff6f61, #d4af7f);
+            }
+            50% {
+                background: linear-gradient(45deg, #a5d8ff, #ff6f61);
+            }
+            100% {
+                background: linear-gradient(45deg, #ff6f61, #d4af7f);
             }
         }
     </style>
