@@ -24,6 +24,11 @@
             animation: slideIn 1s ease-out;
         }
 
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
         nav {
             display: flex;
             justify-content: center;
@@ -71,6 +76,15 @@
             font-size: 14px;
             z-index: 2;
             position: relative;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Floating Food Items */
@@ -162,6 +176,26 @@
                 opacity: 0.8;
             }
         }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -194,10 +228,33 @@
         </div>
     </section>
 
+    <section id="food-list">
+        <div class="container">
+            <h2>Food Varieties</h2>
+            <ul>
+                <li>Veg Options</li>
+                <li>Non-Veg Options</li>
+                <li>Custom Meals</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="delivery">
+        <div class="container">
+            <h2>Efficient Delivery Management</h2>
+            <p>We ensure timely and efficient deliveries with real-time tracking.</p>
+        </div>
+    </section>
+
+    <section id="feedback">
+        <div class="container">
+            <h2>Feedback</h2>
+            <p>We value your feedback to improve our services. Please leave your comments.</p>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2025 Food Delivery Portal | <a href="#">Privacy Policy</a></p>
     </footer>
 </body>
 </html>
-
-
