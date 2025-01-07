@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f7f8fa;
             color: #333;
+            animation: fadeIn 1s ease-in-out;
         }
 
         header {
@@ -19,6 +20,7 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
         }
 
         header h1 {
@@ -32,6 +34,7 @@
             background-color: #333;
             padding: 12px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         nav a {
@@ -42,6 +45,7 @@
             font-size: 16px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            animation: bounce 1s ease-in-out infinite alternate;
         }
 
         nav a:hover {
@@ -50,6 +54,7 @@
 
         section {
             padding: 40px 20px;
+            animation: fadeIn 1.8s ease-in-out;
         }
 
         .container {
@@ -60,6 +65,7 @@
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            animation: slideUp 0.8s ease-out;
         }
 
         .container:hover {
@@ -91,6 +97,7 @@
             color: white;
             margin-top: 40px;
             font-size: 14px;
+            animation: fadeIn 2s ease-in-out;
         }
 
         footer a {
@@ -100,6 +107,48 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
