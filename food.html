@@ -18,15 +18,9 @@
 
         /* Gradient background animation */
         @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Header styling */
@@ -45,7 +39,7 @@
             margin: 50px auto;
             padding: 30px;
             max-width: 900px;
-            background: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -56,14 +50,8 @@
 
         /* Fade-in animation */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Heading styling */
@@ -113,6 +101,26 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease-in-out;
         }
+
+        /* Floating food images */
+        .floating-image {
+            position: absolute;
+            width: 80px;
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.9;
+        }
+
+        .image1 { top: 15%; left: 10%; animation-delay: 0s; }
+        .image2 { top: 30%; right: 15%; animation-delay: 2s; }
+        .image3 { bottom: 20%; left: 20%; animation-delay: 4s; }
+        .image4 { bottom: 10%; right: 10%; animation-delay: 6s; }
+
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -132,5 +140,11 @@
             <li><strong>Algorithm Used:</strong> Sorting, Linear Search.</li>
         </ul>
     </div>
+
+    <!-- Floating food images -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Burger" class="floating-image image1">
+    <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Pizza" class="floating-image image2">
+    <img src="https://cdn-icons-png.flaticon.com/512/3480/3480416.png" alt="Sushi" class="floating-image image3">
+    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" alt="Food Box" class="floating-image image4">
 </body>
 </html>
