@@ -21,7 +21,6 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1s ease-out;
         }
 
         header h1 {
@@ -54,7 +53,7 @@
         section {
             padding: 40px 20px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
 
         .container {
@@ -64,7 +63,6 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            animation: slideUp 0.8s ease-out;
         }
 
         footer {
@@ -74,8 +72,8 @@
             color: white;
             margin-top: 40px;
             font-size: 14px;
-            z-index: 2;
             position: relative;
+            z-index: 1;
         }
 
         footer a {
@@ -90,111 +88,28 @@
         /* Floating Food Items */
         .floating-food {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background-size: contain;
             background-repeat: no-repeat;
             z-index: 0;
-            animation: float 10s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
         }
 
-        /* Add multiple food items */
-        .floating-food:nth-child(1) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); /* Pizza */
-            top: 10%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-
-        .floating-food:nth-child(2) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3075/3075977.png'); /* Burger */
-            top: 20%;
-            left: 70%;
-            animation-delay: 2s;
-        }
-
-        .floating-food:nth-child(3) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/135/135660.png'); /* Drink */
-            top: 50%;
-            left: 30%;
-            animation-delay: 4s;
-        }
-
-        .floating-food:nth-child(4) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/1468/1468784.png'); /* Fries */
-            top: 40%;
-            left: 80%;
-            animation-delay: 6s;
-        }
-
-        .floating-food:nth-child(5) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2830/2830305.png'); /* Taco */
-            top: 70%;
-            left: 10%;
-            animation-delay: 3s;
-        }
-
-        .floating-food:nth-child(6) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/888/888954.png'); /* Donut */
-            top: 15%;
-            left: 50%;
-            animation-delay: 5s;
-        }
-
-        .floating-food:nth-child(7) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3480/3480430.png'); /* Cupcake */
-            top: 80%;
-            left: 60%;
-            animation-delay: 7s;
-        }
-
-        .floating-food:nth-child(8) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2917/2917242.png'); /* Ice Cream */
-            top: 25%;
-            left: 40%;
-            animation-delay: 8s;
-        }
-
-        .floating-food:nth-child(9) {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3664/3664699.png'); /* Hot Dog */
-            top: 65%;
-            left: 75%;
-            animation-delay: 10s;
-        }
+        /* Dynamically distribute food items */
+        .floating-food:nth-child(1) { background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); top: 5%; left: 10%; animation-delay: 0s; }
+        .floating-food:nth-child(2) { background-image: url('https://cdn-icons-png.flaticon.com/512/3075/3075977.png'); top: 15%; left: 50%; animation-delay: 1s; }
+        .floating-food:nth-child(3) { background-image: url('https://cdn-icons-png.flaticon.com/512/135/135660.png'); top: 25%; left: 80%; animation-delay: 2s; }
+        .floating-food:nth-child(4) { background-image: url('https://cdn-icons-png.flaticon.com/512/1468/1468784.png'); top: 40%; left: 20%; animation-delay: 3s; }
+        .floating-food:nth-child(5) { background-image: url('https://cdn-icons-png.flaticon.com/512/2830/2830305.png'); top: 60%; left: 70%; animation-delay: 4s; }
+        .floating-food:nth-child(6) { background-image: url('https://cdn-icons-png.flaticon.com/512/888/888954.png'); top: 70%; left: 30%; animation-delay: 5s; }
+        .floating-food:nth-child(7) { background-image: url('https://cdn-icons-png.flaticon.com/512/3480/3480430.png'); top: 85%; left: 10%; animation-delay: 6s; }
+        .floating-food:nth-child(8) { background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046786.png'); top: 10%; left: 75%; animation-delay: 7s; }
 
         @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.8;
-            }
-            50% {
-                transform: translateY(-20px) translateX(20px);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+            50% { transform: translateY(-15px) translateX(15px); opacity: 1; }
+            100% { transform: translateY(0) translateX(0); opacity: 0.8; }
         }
     </style>
 </head>
@@ -210,8 +125,7 @@
         <a href="#feedback">Feedback</a>
     </nav>
 
-    <!-- Floating Food Items in Background -->
-    <div class="floating-food"></div>
+    <!-- Floating Food Items -->
     <div class="floating-food"></div>
     <div class="floating-food"></div>
     <div class="floating-food"></div>
